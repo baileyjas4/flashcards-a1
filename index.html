@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Flashcards Study App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="app-header">
+        <h1>🧠 AI Flashcards</h1>
+        <button id="newDeckButton" aria-label="Create a new deck">New Deck</button>
+    </header>
+
+    <div class="app-layout">
+        <nav class="sidebar" id="deckList">
+            <h2>Decks</h2>
+            <p class="empty-state" id="noDecksMessage">No decks yet. Click "New Deck" to start.</p>
+        </nav>
+
+        <main class="main-content" id="studyArea">
+            <section class="deck-view">
+                <h2 id="activeDeckTitle">Select a Deck</h2>
+                <div class="toolbar">
+                    <input type="search" id="cardSearch" placeholder="Search cards..." aria-label="Search cards in current deck" disabled>
+                    <button id="newCardButton" disabled>New Card</button>
+                    <button id="shuffleButton" disabled>Shuffle</button>
+                    <span id="searchCount"></span>
+                </div>
+                
+                <div class="card-area" id="cardArea">
+                    <p class="empty-state" id="noCardsMessage">No cards in this deck. Add one!</p>
+                    </div>
+
+                <div class="study-controls">
+                    <button id="prevCardButton" aria-label="Previous card" disabled>&#x25C0; Prev</button>
+                    <button id="flipCardButton" aria-label="Flip card" disabled>Flip</button>
+                    <button id="nextCardButton" aria-label="Next card" disabled>Next &#x25B6;</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="modalContainer" class="modal-container" aria-modal="true" role="dialog" style="display: none;">
+        <div class="modal-content">
+            </div>
+    </div>
+
+    <footer class="app-footer">
+        <p>Tip: Use **Space** to flip, **Left/Right** arrows to navigate. Data is saved locally in your browser.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
